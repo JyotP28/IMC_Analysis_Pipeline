@@ -1,7 +1,10 @@
 # IMC Analysis Workflow
 
 ### Table of Contents
-[Preprocessing .mcd Files](#Preprocessing-.mcd-Files)
+[Preprocessing .mcd Files](##Preprocessing-.mcd-Files)
+[Creating a Cell Mask](##Creating-a-cell-mask)
+[Extracting Single Cell Information](##Extracting-Signal-Cell-Information)
+
 
 
 The following is the workflow and analysis pipleine that was used for Jyot Patel's IMM450Y1 project surrounding analysis of IMC acquisitions of NNC and PMS Hippocampi. Additionally, there is a folder containing a work-in-progress ShinyApp to make this analysis more user-friendly.
@@ -26,7 +29,7 @@ Before we begin the analysis step, we need to process the .mcd files into a form
     4. For the check-boxes, I suggest unselecting all, then clicking the drop down menu beside ROIs to individually select the ROI that you want to analyze
 4. Clicking export will start the conversion process and is the final step in the preprocessing pipeline
 
-# Creating a Cell Mask
+#@ Creating a Cell Mask
 
 ### Prerequisites
 
@@ -50,7 +53,7 @@ Before we begin the analysis step, we need to process the .mcd files into a form
 
 > Note: You will have to do this individually for each of the ROIs. Make sure you put the correct CellMask.tiff file into correct folder as it is critical for downstream analysis
 
-# Extracting Single Cell Information
+## Extracting Single Cell Information
 
 ### Prerequisites
 
