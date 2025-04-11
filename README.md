@@ -4,7 +4,7 @@
 
 - [Preprocessing .mcd Files](#preprocessing-mcd-files)  
 - [Creating a Cell Mask](#creating-a-cell-mask)  
-- [Extracting Single Cell Information](#extracting-single-cell-information)  
+- [Cell Segmentation and Data Extraction](#cell-segmentation-and-data-extraction)  
 - [Visualizing Single Cell Data](#visualizing-single-cell-data)
 
 
@@ -58,7 +58,7 @@ Before we begin the analysis step, we need to process the .mcd files into a form
 
 > Note: You will have to do this individually for each of the ROIs. Make sure you put the correct CellMask.tiff file into correct folder as it is critical for downstream analysis
 
-## Extracting Single Cell Information
+## Cell Segmentation and Data Extraction
 
 ### Prerequisites
 
