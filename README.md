@@ -1,5 +1,6 @@
 # IMC Analysis Workflow
 
+The following is the workflow and analysis pipleine that was used for Jyot Patel's IMM450Y1 project surrounding analysis of IMC acquisitions of NNC and PMS Hippocampi. Additionally, there is a folder containing a work-in-progress ShinyApp to make this analysis more user-friendly.
 
 ## Preprocessing .mcd Files
 ### Prerequisites:
