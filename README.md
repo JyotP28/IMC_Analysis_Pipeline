@@ -2,10 +2,11 @@
 
 ### Table of Contents
 
-[Preprocessing .mcd Files](#preprocessing-mcd-files)
-[Creating a Cell Mask](#creating-a-cell-mask)
-[Extracting Single Cell Information](#extracting-single-cell-information)
-[Visualizing Single Cell Data](#visualizing-single-cell-data)
+- [Preprocessing .mcd Files](#preprocessing-mcd-files)  
+- [Creating a Cell Mask](#creating-a-cell-mask)  
+- [Extracting Single Cell Information](#extracting-single-cell-information)  
+- [Visualizing Single Cell Data](#visualizing-single-cell-data)
+
 
 
 
@@ -33,7 +34,7 @@ Before we begin the analysis step, we need to process the .mcd files into a form
     4. For the check-boxes, I suggest unselecting all, then clicking the drop down menu beside ROIs to individually select the ROI that you want to analyze
 4. Clicking export will start the conversion process and is the final step in the preprocessing pipeline
 
-#@ Creating a Cell Mask
+## Creating a Cell Mask
 
 ### Prerequisites
 
