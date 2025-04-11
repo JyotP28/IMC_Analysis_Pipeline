@@ -39,13 +39,13 @@ Before we begin the analysis step, we need to process the .mcd files into a form
 ### Prerequisites
 
 - Windows or Mac copy of CellProfiler downloaded
-- Have a copy of the CellMaskGeneration.pipeline
+- Have a copy of the CellMaskGeneration.cppipe
 - Single Channel TIFFs of each marker from the ROI that you want to analyze
 
 ### Steps to follow
 
 1. Open CellProfiler
-2. Drag and drop the CellMaskGeneration.pipeline file (or click import pipeline from the file menu)
+2. Drag and drop the CellMaskGeneration.cppipe file (or click import pipeline from the file menu)
 3. In the “Images” section, drag and drop your folder with the single channel TIFFs
 4. In the “NamesAndTypes” section, click the update button to allow the program to search through the files for the two DNA markers that we will use for our segmentation mask
 5. The first module that will require some customization is the ImageMath module
