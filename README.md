@@ -1,9 +1,13 @@
 # IMC Analysis Workflow
 
 ### Table of Contents
-[Preprocessing .mcd Files](##Preprocessing-.mcd-Files)
-[Creating a Cell Mask](##Creating-a-cell-mask)
-[Extracting Single Cell Information](##Extracting-Signal-Cell-Information)
+
+[Preprocessing .mcd Files](#preprocessing-mcd-files)
+[Creating a Cell Mask](#creating-a-cell-mask)
+[Extracting Single Cell Information](#extracting-single-cell-information)
+[Visualizing Single Cell Data](#visualizing-single-cell-data)
+
+
 
 
 
@@ -84,7 +88,7 @@ Before we begin the analysis step, we need to process the .mcd files into a form
 
 > Note: It is best to save all csv files into one folder called data for downstream analysis
 
-# Visualizing Single Cell Data
+## Visualizing Single Cell Data
 
 This step of the workflow is highly customizable. To make it simpler for the user, I found it best to use the steps listed below.
 
