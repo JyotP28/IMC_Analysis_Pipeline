@@ -11,6 +11,7 @@
 
 
 
+
 The following is the workflow and analysis pipleine that was used for Jyot Patel's IMM450Y1 project in the Gommerman Lab at University of Toronto, surrounding the analysis of IMC acquisitions of NNC and PMS Hippocampi. Additionally, there is a folder containing a work-in-progress ShinyApp to make this analysis more user-friendly.
 
 ## Preprocessing .mcd Files
@@ -305,6 +306,44 @@ Visualization of the new annotated data will now table place using the "Populati
         rm(exp)
         exp <- do.aggregate(cell.dat, cellular.cols, by = "Population")
         make.pheatmap(exp, "Population", cellular.cols)
+```
+
+## CSV file creation
+
+Using a csv file or fcs file, you can proceed to conduct downstream analysis.
+
+```
+       ### Write data
+        
+        setwd(OutputDirectory)
+        setwd("Output 3 - annotation")
+        
+        fwrite(cell.dat, "Annotated.data.csv")
+        fwrite(cell.sub, "Annotated.data.DR.csv")
+
+    ### Write FCS files
+        
+        setwd(OutputDirectory)
+        setwd("Output 3 - annotation")
+        dir.create('FCS files - all')
+        setwd('FCS files - all')
+        
+        write.files(cell.dat,
+                    file.prefix = exp.name,
+                    divide.by = sample.col,
+                    write.csv = FALSE,
+                    write.fcs = TRUE)
+
+        setwd(OutputDirectory)
+        setwd("Output 3 - annotation")
+        dir.create('FCS files - DR')
+        setwd('FCS files - DR')
+        
+        write.files(cell.sub,
+                    file.prefix = paste0('DR-', exp.name),
+                    divide.by = sample.col,
+                    write.csv = FALSE,
+                    write.fcs = TRUE)
 ```
 
 
