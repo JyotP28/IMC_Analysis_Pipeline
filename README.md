@@ -6,8 +6,7 @@
 - [Creating a Cell Mask](#creating-a-cell-mask)  
 - [Cell Segmentation and Data Extraction](#cell-segmentation-and-data-extraction)  
 - [Visualizing Single Cell Data](#visualizing-single-cell-data)
-
-
+- [Annotation and CSV file creation](#annotation-and-CSV-file-creation)
 
 
 
@@ -254,11 +253,58 @@ setwd(a)
 ```
 ### DR plots
         make.colour.plot(cell.sub, "UMAP_X", "UMAP_Y", "FlowSOM_metacluster", col.type = 'factor', add.label = TRUE)
-
+```
+```
 ### the following will generate an image with individual marker expression on the DR plot
         make.multi.plot(cell.sub, "UMAP_X", "UMAP_Y", cellular.cols)
-
+```
+```
 ### Generate an Expression heatmap to classify each group
         exp <- do.aggregate(cell.dat, cellular.cols, by = "FlowSOM_metacluster")
         make.pheatmap(exp, "FlowSOM_metacluster", cellular.cols)
 ```
+
+## Annotation and CSV file creation
+
+This is where labelling of the clusters will take place. It requires slight customization of the code below, where each phenotype is assigned cluster #'s, where the file line in the command does not include a comma. You may combine multiple clusters into one phenotype label, but make sure that the phenotype labels are distinct.
+
+```
+### Annotate
+
+annots <- list("CD4 T cells" = c(1),
+	"CD8 T cells" = c(2),
+	"Neurons 1" = c(3),
+        "Neurons 2" = c(4),
+        "Macrophages" = c(5),
+        "Microglia" = c(6, 7, 8)
+)
+### Convert list to table format
+
+        annots <- do.list.switch(annots)
+        names(annots) <- c("Values", "Population")
+        setorderv(annots, 'Values')
+        annots
+
+    ### Add annotations
+
+        cell.dat <- do.add.cols(cell.dat, "FlowSOM_metacluster", annots, "Values")
+        cell.dat
+
+        cell.sub <- do.add.cols(cell.sub, "FlowSOM_metacluster", annots, "Values")
+        cell.sub
+```
+Visualization of the new annotated data will now table place using the "Population" value in a similar fashion to what we did previously 
+
+```
+### DR plot
+        make.colour.plot(cell.sub, "UMAP_X", "UMAP_Y", "Population", col.type = 'factor', add.label = TRUE)
+```
+```
+### Expression Heatmap
+
+        rm(exp)
+        exp <- do.aggregate(cell.dat, cellular.cols, by = "Population")
+        make.pheatmap(exp, "Population", cellular.cols)
+```
+
+
